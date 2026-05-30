@@ -444,7 +444,7 @@
       gap: 0.5rem;
     }
     #intro-photo { margin: 1.25rem auto 0; }
-    #result-photo { margin: 1rem auto; display: none; }
+    #result-photo { margin: 1rem auto; }
     .photo-placeholder .photo-icon { font-size: 2rem; }
 
     /* ── Standalone CTA ── */
@@ -821,6 +821,9 @@
     document.getElementById('rapport-body').innerHTML = r.rapport;
     document.getElementById('email-form').style.display = 'block';
     document.getElementById('rapport-full').classList.remove('visible');
+    document.getElementById('cta-title-standalone').textContent = r.title + ': de volgende stap';
+    document.getElementById('cta-sub-standalone').textContent = r.ctaSub;
+    document.getElementById('cta-standalone').classList.add('visible');
     showScreen('screen-result');
   }
 
@@ -856,8 +859,6 @@
     document.getElementById('cta-sub-standalone').textContent = r.ctaSub;
     document.getElementById('email-form').style.display = 'none';
     document.getElementById('rapport-full').classList.add('visible');
-    document.getElementById('result-photo').style.display = 'flex';
-    document.getElementById('cta-standalone').classList.add('visible');
     window.scrollTo({ top: document.getElementById('rapport-full').offsetTop - 80, behavior: 'smooth' });
   }
 </script>
