@@ -4,30 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gebruik jij AI, of gebruikt AI jou? – Spill Your Tea</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
   <style>
     :root {
-      --accent:  #d97706;
-      --accent2: #b45309;
-      --orange:  #78350f;
-      --dark:    #78350f;
-      --bg:      #f6f7fb;
-      --card:    #ffffff;
+      --accent:  #2d5a8e;
+      --accent2: #1e3a5f;
+      --orange:  #1e3a5f;
+      --dark:    #0f2240;
+      --bg:      #f2efe9;
+      --card:    #faf9f6;
       --text:    #0f1117;
       --muted:   #6b7280;
-      --subtle:  #e5e7eb;
+      --subtle:  #dedad2;
       --border:  rgba(0,0,0,0.07);
       --radius:  16px;
-      --shadow:  0 2px 12px rgba(0,0,0,0.07);
-      --shadow-lg: 0 8px 32px rgba(120,53,15,0.18);
+      --shadow:  0 2px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(30,58,95,0.18);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { width: 100%; overflow-x: hidden; }
 
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       background:
         linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)),
         url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
@@ -62,22 +62,23 @@
       font-family: inherit;
       font-weight: 700;
       border: none;
-      border-radius: 99px;
+      border-radius: 6px;
       cursor: pointer;
       transition: all 0.2s;
       text-decoration: none;
+      letter-spacing: 0.03em;
     }
     .btn-primary {
       background: var(--orange);
       color: white;
       font-size: 1rem;
       padding: 0.9rem 2.2rem;
-      box-shadow: 0 6px 20px rgba(120,53,15,0.45), 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 20px rgba(30,58,95,0.45), 0 2px 6px rgba(0,0,0,0.2);
     }
     .btn-primary:hover {
-      background: #5c2709;
+      background: #0f2240;
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(120,53,15,0.55), 0 4px 12px rgba(0,0,0,0.25);
+      box-shadow: 0 12px 32px rgba(30,58,95,0.55), 0 4px 12px rgba(0,0,0,0.25);
       filter: brightness(1.1);
     }
     .btn-primary:active { transform: translateY(-1px); }
@@ -102,14 +103,14 @@
       color: white;
       font-size: 0.95rem;
       padding: 0.8rem 2rem;
-      box-shadow: 0 6px 20px rgba(217,119,6,0.45), 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 20px rgba(45,90,142,0.45), 0 2px 6px rgba(0,0,0,0.15);
       width: 100%;
       justify-content: center;
     }
     .btn-amber:hover {
       background: var(--accent2);
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(217,119,6,0.5), 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 12px 28px rgba(45,90,142,0.5), 0 4px 10px rgba(0,0,0,0.2);
       filter: brightness(1.08);
     }
     .btn-amber:active { transform: translateY(-1px); }
@@ -125,35 +126,36 @@
     }
     .intro-badge {
       display: inline-block;
-      background: rgba(217,119,6,0.3);
-      color: #ef4444;
+      background: rgba(30,58,95,0.25);
+      color: #93c5fd;
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       padding: 0.35rem 1rem;
-      border-radius: 99px;
+      border-radius: 4px;
       margin-bottom: 1.25rem;
+      border: 1px solid rgba(147,197,253,0.3);
     }
     .intro-hero h1 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.9rem, 5vw, 3rem);
       font-weight: 800;
       line-height: 1.15;
       margin-bottom: 1rem;
       color: #ffffff;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 24px rgba(0,0,0,0.85), 0 1px 6px rgba(0,0,0,0.7), 0 6px 40px rgba(0,0,0,0.5);
     }
-    .intro-hero h1 em { color: #d97706; font-style: normal; }
+    .intro-hero h1 em { color: #93c5fd; font-style: normal; }
     .intro-hero .hero-sub {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.25rem;
       font-weight: 600;
       color: #ffffff;
       max-width: 500px;
       margin: 0 auto 2rem;
       line-height: 1.65;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+      text-shadow: 0 2px 16px rgba(0,0,0,0.75), 0 1px 4px rgba(0,0,0,0.6);
     }
 
     .intro-content {
@@ -171,7 +173,7 @@
       margin-bottom: 1.25rem;
     }
     .intro-why h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.1rem;
       font-weight: 800;
       color: #0f1117;
@@ -221,7 +223,7 @@
     .outcome-icon { font-size: 1.8rem; color: var(--dark); }
     .outcome-icon i { font-size: 1.8rem; }
     @media (max-width: 500px) { .outcomes { grid-template-columns: 1fr; } }
-    .outcome-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0f1117; margin-bottom: 0.15rem; }
+    .outcome-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0f1117; margin-bottom: 0.15rem; }
     .outcome-desc { font-size: 0.79rem; color: var(--muted); line-height: 1.5; }
 
     .intro-start {
@@ -330,35 +332,36 @@
     }
     .result-hero.ontdekker {
       background:
-        linear-gradient(rgba(60,25,5,0.92), rgba(92,38,8,0.92)),
+        linear-gradient(rgba(10,22,50,0.92), rgba(25,52,100,0.92)),
         url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.bewuste {
       background:
-        linear-gradient(rgba(60,25,5,0.92), rgba(120,53,15,0.92)),
+        linear-gradient(rgba(18,38,75,0.92), rgba(38,78,140,0.92)),
         url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.voorloper {
       background:
-        linear-gradient(rgba(40,20,5,0.92), rgba(78,35,8,0.92)),
+        linear-gradient(rgba(8,18,42,0.92), rgba(20,44,88,0.92)),
         url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
 
     .result-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.15);
       color: rgba(255,255,255,0.95);
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       padding: 0.35rem 1rem;
-      border-radius: 99px;
+      border-radius: 4px;
       margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,0.25);
     }
     .result-emoji { font-size: 3.2rem; display: block; margin-bottom: 0.75rem; }
     .result-hero h2 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.8rem, 5vw, 2.6rem);
       font-weight: 800;
       margin-bottom: 0.6rem;
@@ -366,7 +369,7 @@
       text-shadow: 0 2px 16px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
     }
     .result-hero .result-sub {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1rem;
       color: #ffffff;
       opacity: 0.92;
@@ -473,8 +476,8 @@
       to   { opacity: 1; transform: scale(1) translateY(0); }
     }
     @keyframes progressGlow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(120,53,15,0.3); }
-      50%       { box-shadow: 0 0 10px 3px rgba(120,53,15,0.15); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(30,58,95,0.3); }
+      50%       { box-shadow: 0 0 10px 3px rgba(30,58,95,0.15); }
     }
     .question-body { animation: slideInRight 0.35s ease-out; }
     .answer-btn { opacity: 0; animation: fadeInUp 0.3s ease-out forwards; }
@@ -492,12 +495,12 @@
       top: 48%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(120,53,15,0.92);
+      background: rgba(15,34,64,0.95);
       color: white;
       font-size: 1.1rem;
       font-weight: 700;
       padding: 0.7rem 1.6rem;
-      border-radius: 99px;
+      border-radius: 4px;
       opacity: 0;
       transition: opacity 0.18s;
       pointer-events: none;
@@ -528,13 +531,14 @@
       font-size: 0.85rem;
       font-weight: 600;
       padding: 0.55rem 1.1rem;
-      border-radius: 99px;
+      border-radius: 6px;
       border: 1.5px solid var(--subtle);
-      background: white;
+      background: var(--card);
       color: var(--text);
       cursor: pointer;
       transition: all 0.18s;
       text-decoration: none;
+      letter-spacing: 0.03em;
     }
     .share-btn:hover { border-color: var(--dark); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     .share-btn i { font-size: 1rem; }
