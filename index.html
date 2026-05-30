@@ -967,10 +967,11 @@
   }
 
   function getResultKey() {
-    const total = scores.reduce((s, v) => s + v, 0);
-    if (total >= 25) return 'voorloper';
-    if (total >= 16) return 'bewuste';
-    return 'ontdekker';
+    const aCount = scores.filter(s => s === 4).length;
+    const dCount = scores.filter(s => s === 1).length;
+    if (aCount >= 4) return 'voorloper';
+    if (dCount >= 4) return 'ontdekker';
+    return 'bewuste';
   }
 
   function showResult() {
