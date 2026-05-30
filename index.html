@@ -425,6 +425,68 @@
       line-height: 1.5;
     }
 
+    /* ── Foto placeholder ── */
+    .photo-placeholder {
+      width: 100%;
+      max-width: 620px;
+      height: 220px;
+      border: 2px dashed var(--subtle);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--card);
+      margin: 1.25rem auto 0;
+      gap: 0.5rem;
+    }
+    #intro-photo { margin: 1.25rem auto 0; }
+    #result-photo { margin: 1rem auto; display: none; }
+    .photo-placeholder .photo-icon { font-size: 2rem; }
+
+    /* ── Standalone CTA ── */
+    .cta-card-standalone {
+      display: none;
+      max-width: 620px;
+      margin: 0 auto 0;
+      padding: 0 0 3rem;
+      width: 100%;
+    }
+    .cta-card-standalone.visible { display: block; }
+    .cta-card-inner {
+      background: linear-gradient(135deg, var(--dark), var(--accent2));
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+    .cta-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 0.5rem;
+    }
+    .cta-card-inner h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .cta-card-inner > p {
+      font-size: 0.88rem;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     footer {
       text-align: center;
       font-size: 0.75rem;
@@ -459,9 +521,14 @@
   <div class="intro-content">
     <div class="intro-why">
       <h2>Waarom dit ertoe doet</h2>
-      <p>AI is niet meer weg te denken uit het ondernemen. Maar de meeste ondernemers gebruiken het <strong>onbewust</strong> — zonder na te denken over wat er met hun data gebeurt, wat de wet van hen vraagt of hoe het past bij hun waarden.</p>
+      <p>AI is niet meer weg te denken uit het ondernemen. Maar de meeste ondernemers gebruiken het <strong>onbewust</strong>. Zonder na te denken over wat er met hun data gebeurt, wat de wet van hen vraagt of hoe het past bij hun waarden.</p>
       <p>De <strong>EU AI Act</strong> is inmiddels van kracht. Klantdata verdwijnt in systemen waar je geen zicht op hebt. En AI-tools die je vandaag gebruikt, kunnen morgen je reputatie of compliance op het spel zetten.</p>
-      <p>Weten waar je staat is de eerste stap. Deze quiz laat je in vijf minuten zien wat jouw vertrekpunt is — zonder oordeel, met concrete handvatten.</p>
+      <p>Weten waar je staat is de eerste stap. Deze quiz laat je in vijf minuten zien wat jouw vertrekpunt is. Zonder oordeel, met concrete handvatten.</p>
+    </div>
+
+    <div class="photo-placeholder" id="intro-photo">
+      <span class="photo-icon">📷</span>
+      <span>Voeg hier je foto in</span>
     </div>
 
     <div class="intro-outcomes">
@@ -548,11 +615,20 @@
 
       <div class="rapport-full" id="rapport-full">
         <p id="rapport-body"></p>
-        <hr class="rapport-divider" />
-        <div class="cta-section">
-          <a href="#" class="btn btn-primary" id="cta-btn" style="justify-content:center;width:100%;">Plan een gratis Spill Your Tea sessie →</a>
-          <p id="cta-sub"></p>
-        </div>
+      </div>
+    </div>
+
+    <div class="photo-placeholder" id="result-photo">
+      <span class="photo-icon">📷</span>
+      <span>Voeg hier je foto in</span>
+    </div>
+
+    <div class="cta-card-standalone" id="cta-standalone">
+      <div class="cta-card-inner">
+        <p class="cta-label">Klaar voor de volgende stap?</p>
+        <h3 id="cta-title-standalone"></h3>
+        <p id="cta-sub-standalone"></p>
+        <a href="#" class="btn btn-primary" id="cta-btn-standalone">Plan een gratis Spill Your Tea sessie →</a>
       </div>
     </div>
   </div>
@@ -647,27 +723,27 @@
       emoji: '🌱',
       sub: 'Je gebruikt AI maar hebt er nog nooit bewust over nagedacht.',
       heroClass: 'ontdekker',
-      preview: 'Je staat aan het begin van een bewustwordingsproces — en dat is eerlijker dan je denkt. De meeste ondernemers staan hier. De kans is groot dat je AI gebruikt zonder te weten wat er met je data gebeurt, wat de wet van je vraagt of hoe het aansluit bij jouw waarden.',
+      preview: 'Je staat aan het begin van een bewustwordingsproces. En dat is eerlijker dan je denkt. De meeste ondernemers staan hier. De kans is groot dat je AI gebruikt zonder te weten wat er met je data gebeurt, wat de wet van je vraagt of hoe het aansluit bij jouw waarden.',
       rapport: 'Het goede nieuws: je hoeft het niet alleen uit te zoeken. Met de <strong>Ethical AI Audit</strong> breng ik in kaart waar jij staat, wat de risico\'s zijn, en hoe je bewuster kunt gaan werken met de tools die je al gebruikt. In negentig minuten heb je helderheid.',
-      ctaSub: 'Ontvang een uitnodiging voor de Clarity Tea — een gratis kennismaking waarbij we samen kijken wat jij nodig hebt.',
+      ctaSub: 'Ontvang een uitnodiging voor de Clarity Tea: een gratis kennismaking waarbij we samen kijken wat jij nodig hebt.',
     },
     bewuste: {
       title: 'De Bewuste Gebruiker',
       emoji: '🔍',
       sub: 'Je denkt na over je AI-gebruik, maar er zijn nog blinde vlekken.',
       heroClass: 'bewuste',
-      preview: 'Je bent op de goede weg. Je denkt na over je AI-gebruik en voelt dat er meer mogelijk is — maar er zijn nog blinde vlekken. Misschien weet je niet precies wat de wet van je vraagt, of heb je nog geen helder beleid op papier staan.',
-      rapport: 'De <strong>Ethical AI Audit</strong> geeft je in negentig minuten inzicht in waar je staat en drie concrete stappen om verder te gaan. Je loopt waarschijnlijk al voor op veel collega-ondernemers — dit helpt je dat voordeel te benutten.',
-      ctaSub: 'Ontvang een uitnodiging voor de Ethical AI Audit — de logische volgende stap voor jou.',
+      preview: 'Je bent op de goede weg. Je denkt na over je AI-gebruik en voelt dat er meer mogelijk is. Maar er zijn nog blinde vlekken. Misschien weet je niet precies wat de wet van je vraagt, of heb je nog geen helder beleid op papier staan.',
+      rapport: 'De <strong>Ethical AI Audit</strong> geeft je in negentig minuten inzicht in waar je staat en drie concrete stappen om verder te gaan. Je loopt waarschijnlijk al voor op veel collega-ondernemers. Dit helpt je dat voordeel te benutten.',
+      ctaSub: 'Ontvang een uitnodiging voor de Ethical AI Audit: de logische volgende stap voor jou.',
     },
     voorloper: {
       title: 'De Ethische Voorloper',
       emoji: '🌟',
       sub: 'Je gebruikt AI bewust en verantwoord. Dat is zeldzaam en waardevol.',
       heroClass: 'voorloper',
-      preview: 'Jij gebruikt AI bewust en verantwoord. Je hebt nagedacht over data, privacy, ethiek en jouw waarden als ondernemer. Dat is zeldzaam en waardevol — en het maakt jou tot een geloofwaardige stem in jouw vakgebied.',
-      rapport: 'Maar bewust blijven kost aandacht, want AI en wetgeving veranderen snel. De <strong>Strippenkaart Bewuste AI</strong> helpt je bijblijven zonder dat je er zelf constant in hoeft te duiken. Zo behoud je je voorsprong — structureel.',
-      ctaSub: 'Ontvang een uitnodiging voor het volledige pakket of de strippenkaart — voor ondernemers die al weten waar ze staan.',
+      preview: 'Jij gebruikt AI bewust en verantwoord. Je hebt nagedacht over data, privacy, ethiek en jouw waarden als ondernemer. Dat is zeldzaam en waardevol. Het maakt jou tot een geloofwaardige stem in jouw vakgebied.',
+      rapport: 'Maar bewust blijven kost aandacht, want AI en wetgeving veranderen snel. De <strong>Strippenkaart Bewuste AI</strong> helpt je bijblijven zonder dat je er zelf constant in hoeft te duiken. Zo behoud je je voorsprong op een structurele manier.',
+      ctaSub: 'Ontvang een uitnodiging voor het volledige pakket of de strippenkaart: voor ondernemers die al weten waar ze staan.',
     },
   };
 
@@ -759,6 +835,7 @@
     errorEl.style.display = 'none';
 
     const key = getResultKey();
+    const r = RESULTS[key];
 
     if (MAILERLITE_API_KEY && MAILERLITE_GROUP_ID) {
       try {
@@ -776,9 +853,12 @@
         });
       } catch (e) {}
     }
-
+    document.getElementById('cta-title-standalone').textContent = r.ctaTitle || r.title;
+    document.getElementById('cta-sub-standalone').textContent = r.ctaSub;
     document.getElementById('email-form').style.display = 'none';
     document.getElementById('rapport-full').classList.add('visible');
+    document.getElementById('result-photo').style.display = 'flex';
+    document.getElementById('cta-standalone').classList.add('visible');
     window.scrollTo({ top: document.getElementById('rapport-full').offsetTop - 80, behavior: 'smooth' });
   }
 </script>
