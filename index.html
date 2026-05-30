@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gebruik jij AI, of gebruikt AI jou?</title>
+  <title>Gebruik jij AI, of gebruikt AI jou? – Spill Your Tea</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #1e3a5f;
-      --navy-light: #2d5085;
-      --orange: #ea580c;
-      --orange-light: #f97316;
-      --white: #ffffff;
-      --bg: #f8fafc;
-      --text: #0f172a;
-      --muted: #64748b;
-      --border: rgba(0,0,0,0.08);
-      --radius: 16px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.07);
-      --shadow-lg: 0 8px 32px rgba(30,58,95,0.15);
+      --accent:  #d97706;
+      --accent2: #b45309;
+      --orange:  #ea580c;
+      --dark:    #78350f;
+      --bg:      #f6f7fb;
+      --card:    #ffffff;
+      --text:    #0f1117;
+      --muted:   #6b7280;
+      --subtle:  #e5e7eb;
+      --border:  rgba(0,0,0,0.07);
+      --radius:  16px;
+      --shadow:  0 2px 12px rgba(0,0,0,0.07);
+      --shadow-lg: 0 8px 32px rgba(120,53,15,0.18);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,7 +27,9 @@
 
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
+      background:
+        linear-gradient(rgba(255,255,255,0.80), rgba(255,255,255,0.80)),
+        url('https://images.unsplash.com/photo-1454438992604-4a8e59768a5a?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -34,86 +37,144 @@
     }
 
     /* ── Header ── */
-    .quiz-header {
-      background: linear-gradient(135deg, var(--navy), var(--navy-light));
-      padding: 1rem 1.5rem;
+    .site-header {
+      background: rgba(120,53,15,0.92);
+      backdrop-filter: blur(8px);
+      padding: 0.9rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    .logo {
-      color: white;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-    .logo span { color: #fdba74; }
+    .logo { color: white; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; }
+    .logo span { color: #fcd34d; }
 
     /* ── Screens ── */
     .screen { display: none; flex: 1; flex-direction: column; }
     .screen.active { display: flex; }
 
-    /* ── Intro ── */
+    /* ── Knoppen ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: inherit;
+      font-weight: 700;
+      border: none;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      font-size: 1rem;
+      padding: 0.9rem 2.2rem;
+      box-shadow: 0 4px 16px rgba(234,88,12,0.38);
+    }
+    .btn-primary:hover { background: #c2410c; transform: translateY(-1px); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+    .btn-outline {
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--subtle);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-amber {
+      background: var(--accent);
+      color: white;
+      font-size: 0.95rem;
+      padding: 0.8rem 2rem;
+      box-shadow: 0 4px 14px rgba(217,119,6,0.35);
+      width: 100%;
+      justify-content: center;
+    }
+    .btn-amber:hover { background: var(--accent2); transform: translateY(-1px); }
+
+    /* ── INTRO ── */
     .intro-hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      padding: 4rem 1.5rem 5rem;
+      background:
+        linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
+        url('https://images.unsplash.com/photo-1454438992604-4a8e59768a5a?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+      padding: 4rem 1.5rem 5.5rem;
       text-align: center;
       color: white;
     }
     .intro-badge {
       display: inline-block;
-      background: rgba(234,88,12,0.25);
-      color: #fdba74;
-      font-size: 0.75rem;
+      background: rgba(217,119,6,0.3);
+      color: #fcd34d;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       padding: 0.35rem 1rem;
       border-radius: 99px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
     .intro-hero h1 {
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-size: clamp(1.9rem, 5vw, 3rem);
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.15;
       margin-bottom: 1rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
     }
-    .intro-hero h1 span { color: #fdba74; }
-    .intro-hero p {
+    .intro-hero h1 em { color: #fcd34d; font-style: normal; }
+    .intro-hero .hero-sub {
       font-size: 1.05rem;
-      color: rgba(255,255,255,0.82);
-      max-width: 460px;
+      color: rgba(255,255,255,0.85);
+      max-width: 500px;
       margin: 0 auto 2rem;
-      line-height: 1.6;
+      line-height: 1.65;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
     }
-    .btn-primary {
-      display: inline-block;
-      background: var(--orange);
-      color: white;
-      font-family: inherit;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 0.9rem 2.5rem;
-      border-radius: 99px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 4px 16px rgba(234,88,12,0.4);
-    }
-    .btn-primary:hover { background: #c2410c; transform: translateY(-1px); }
 
     .intro-content {
-      max-width: 580px;
-      margin: -2rem auto 0;
+      max-width: 620px;
+      margin: -2.5rem auto 0;
       padding: 0 1rem 3rem;
       width: 100%;
     }
-    .intro-card {
-      background: white;
+    .intro-why {
+      background: var(--card);
       border-radius: var(--radius);
       padding: 1.75rem;
       box-shadow: var(--shadow-lg);
       border: 1px solid var(--border);
+      margin-bottom: 1.25rem;
     }
-    .intro-card h2 {
-      font-size: 0.78rem;
+    .intro-why h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+    .intro-why p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .intro-why p + p { margin-top: 0.75rem; }
+    .intro-why strong { color: var(--text); }
+
+    .intro-outcomes {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .intro-outcomes h3 {
+      font-size: 0.75rem;
       font-weight: 700;
       color: var(--muted);
       letter-spacing: 0.1em;
@@ -130,54 +191,66 @@
       background: var(--bg);
       border: 1px solid var(--border);
     }
-    .outcome-icon { font-size: 1.5rem; flex-shrink: 0; }
-    .outcome-name { font-weight: 700; font-size: 0.9rem; color: var(--navy); margin-bottom: 0.2rem; }
-    .outcome-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .outcome-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .outcome-name { font-weight: 700; font-size: 0.9rem; color: var(--dark); margin-bottom: 0.15rem; }
+    .outcome-desc { font-size: 0.79rem; color: var(--muted); line-height: 1.5; }
 
-    /* ── Vragen ── */
-    .question-header {
-      background: white;
+    .intro-start {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .intro-start p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    /* ── VRAGEN ── */
+    .question-topbar {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       flex-shrink: 0;
     }
     .progress-wrap { max-width: 600px; margin: 0 auto; }
     .progress-info {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.45rem;
     }
     .progress-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); }
-    .progress-count { font-size: 0.78rem; font-weight: 700; color: var(--navy); }
-    .progress-bar-bg { height: 6px; background: var(--bg); border-radius: 99px; overflow: hidden; }
+    .progress-count { font-size: 0.78rem; font-weight: 700; color: var(--dark); }
+    .progress-bar-bg { height: 6px; background: var(--subtle); border-radius: 99px; overflow: hidden; }
     .progress-bar-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--navy), var(--orange));
+      background: linear-gradient(90deg, var(--orange), var(--accent));
       border-radius: 99px;
       transition: width 0.4s ease;
     }
 
     .question-body {
       flex: 1;
-      max-width: 600px;
+      max-width: 620px;
       width: 100%;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 2rem;
     }
     .question-text {
       font-size: clamp(1.05rem, 3vw, 1.25rem);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--text);
       line-height: 1.45;
       margin-bottom: 1.5rem;
     }
-    .answers { display: flex; flex-direction: column; gap: 0.75rem; }
+    .answers { display: flex; flex-direction: column; gap: 0.65rem; }
     .answer-btn {
       display: flex;
       align-items: flex-start;
       gap: 0.85rem;
       padding: 1rem 1.1rem;
-      background: white;
+      background: var(--card);
       border: 2px solid var(--border);
       border-radius: var(--radius);
       cursor: pointer;
@@ -190,8 +263,8 @@
       box-shadow: var(--shadow);
       width: 100%;
     }
-    .answer-btn:hover { border-color: var(--navy); background: #f0f5ff; }
-    .answer-btn.selected { border-color: var(--orange); background: #fff7f0; }
+    .answer-btn:hover { border-color: var(--accent); background: #fffbeb; }
+    .answer-btn.selected { border-color: var(--orange); background: #fff7ed; }
     .answer-letter {
       display: flex;
       align-items: center;
@@ -201,7 +274,7 @@
       min-width: 26px;
       border-radius: 50%;
       background: var(--bg);
-      border: 1.5px solid var(--border);
+      border: 1.5px solid var(--subtle);
       font-size: 0.75rem;
       font-weight: 700;
       color: var(--muted);
@@ -214,43 +287,109 @@
       border-color: var(--orange);
       color: white;
     }
-
-    /* ── Email ── */
-    .email-screen {
-      flex: 1;
+    .question-nav {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
+      justify-content: flex-start;
+      margin-top: 1.25rem;
     }
-    .email-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 2.5rem 2rem;
-      max-width: 480px;
+
+    /* ── RESULTAAT ── */
+    .result-hero {
+      padding: 3.5rem 1.5rem 5rem;
+      text-align: center;
+      color: white;
+    }
+    .result-hero.ontdekker {
+      background:
+        linear-gradient(rgba(146,64,14,0.88), rgba(180,83,9,0.88)),
+        url('https://images.unsplash.com/photo-1454438992604-4a8e59768a5a?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+    }
+    .result-hero.bewuste {
+      background:
+        linear-gradient(rgba(180,83,9,0.88), rgba(217,119,6,0.88)),
+        url('https://images.unsplash.com/photo-1454438992604-4a8e59768a5a?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+    }
+    .result-hero.voorloper {
+      background:
+        linear-gradient(rgba(120,53,15,0.88), rgba(146,64,14,0.88)),
+        url('https://images.unsplash.com/photo-1454438992604-4a8e59768a5a?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+    }
+
+    .result-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.95);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .result-emoji { font-size: 3.2rem; display: block; margin-bottom: 0.75rem; }
+    .result-hero h2 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .result-hero .result-sub {
+      font-size: 1rem;
+      opacity: 0.88;
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    .result-content {
+      max-width: 620px;
+      margin: -2.5rem auto 0;
+      padding: 0 1rem 3rem;
       width: 100%;
+    }
+    .result-preview {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.75rem;
       box-shadow: var(--shadow-lg);
       border: 1px solid var(--border);
-      text-align: center;
+      margin-bottom: 1rem;
     }
-    .email-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .email-card h2 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
-    }
-    .email-card > p {
+    .result-preview h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
       color: var(--muted);
-      font-size: 0.92rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .result-preview p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+    .result-preview strong { color: var(--text); }
+
+    .rapport-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--accent);
+    }
+    .rapport-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .rapport-card > p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
       line-height: 1.6;
-      margin-bottom: 1.5rem;
     }
     .email-input {
       width: 100%;
       padding: 0.85rem 1rem;
-      border: 2px solid var(--border);
+      border: 2px solid var(--subtle);
       border-radius: 10px;
       font-family: inherit;
       font-size: 0.95rem;
@@ -258,79 +397,33 @@
       outline: none;
       transition: border-color 0.2s;
       margin-bottom: 0.75rem;
+      background: var(--bg);
     }
-    .email-input:focus { border-color: var(--navy); }
-    .privacy-note { font-size: 0.72rem; color: var(--muted); margin-top: 0.5rem; }
-    .email-error { color: #ef4444; font-size: 0.82rem; margin-top: 0.4rem; display: none; }
+    .email-input:focus { border-color: var(--accent); background: white; }
+    .email-error { color: #ef4444; font-size: 0.8rem; margin-bottom: 0.5rem; display: none; }
+    .privacy-note { font-size: 0.71rem; color: var(--muted); margin-top: 0.6rem; text-align: center; }
 
-    /* ── Resultaat ── */
-    .result-hero {
-      padding: 3.5rem 1.5rem 4.5rem;
-      text-align: center;
-      color: white;
-    }
-    .result-hero.ontdekker { background: linear-gradient(135deg, #92400e, #b45309); }
-    .result-hero.bewuste   { background: linear-gradient(135deg, var(--navy), var(--navy-light)); }
-    .result-hero.voorloper { background: linear-gradient(135deg, #065f46, #059669); }
-
-    .result-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.35rem 1rem;
-      border-radius: 99px;
+    .rapport-full { display: none; }
+    .rapport-full.visible { display: block; }
+    .rapport-full p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.8;
       margin-bottom: 1rem;
     }
-    .result-emoji { font-size: 3rem; display: block; margin-bottom: 0.75rem; }
-    .result-hero h2 { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; margin-bottom: 0.5rem; }
-    .result-sub { font-size: 1rem; opacity: 0.85; max-width: 420px; margin: 0 auto; line-height: 1.5; }
-
-    .result-content {
-      max-width: 580px;
-      margin: -2rem auto 0;
-      padding: 0 1rem 3rem;
-      width: 100%;
-    }
-    .result-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
-      margin-bottom: 1rem;
-    }
-    .result-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.8; }
-    .result-card strong { color: var(--text); }
-
-    .cta-card {
-      background: linear-gradient(135deg, var(--navy), var(--navy-light));
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      text-align: center;
-      color: white;
-    }
-    .cta-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .cta-card p { font-size: 0.88rem; opacity: 0.85; margin-bottom: 1.25rem; line-height: 1.5; }
-    .btn-cta {
-      display: inline-block;
-      background: var(--orange);
-      color: white;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 0.8rem 2rem;
-      border-radius: 99px;
+    .rapport-full strong { color: var(--text); }
+    .rapport-divider {
       border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(234,88,12,0.35);
+      border-top: 1px solid var(--subtle);
+      margin: 1.25rem 0;
     }
-    .btn-cta:hover { background: #c2410c; transform: translateY(-1px); }
+    .cta-section { text-align: center; margin-top: 0.5rem; }
+    .cta-section p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      line-height: 1.5;
+    }
 
     footer {
       text-align: center;
@@ -342,29 +435,37 @@
     }
 
     @media (max-width: 500px) {
-      .intro-hero { padding: 3rem 1rem 4rem; }
-      .email-card { padding: 1.75rem 1.25rem; }
-      .result-card, .cta-card { padding: 1.25rem; }
+      .intro-hero { padding: 3rem 1rem 4.5rem; }
+      .result-hero { padding: 2.5rem 1rem 4rem; }
+      .intro-why, .intro-outcomes, .result-preview, .rapport-card { padding: 1.25rem; }
     }
   </style>
 </head>
 <body>
 
-<header class="quiz-header">
+<header class="site-header">
   <div class="logo">Spill Your Tea: <span>AI zonder bullshit</span></div>
 </header>
 
-<!-- INTRO -->
+<!-- ── INTRO ── -->
 <div id="screen-intro" class="screen active">
   <div class="intro-hero">
     <div class="intro-badge">✦ Gratis quiz · 5 minuten</div>
-    <h1>Gebruik jij AI,<br>of <span>gebruikt AI jou?</span></h1>
-    <p>Ontdek in vijf minuten waar jij staat als bewuste AI-gebruiker.</p>
-    <button class="btn-primary" onclick="startQuiz()">Start de quiz →</button>
+    <h1>Gebruik jij AI,<br>of <em>gebruikt AI jou?</em></h1>
+    <p class="hero-sub">Ontdek in vijf minuten waar jij staat als bewuste AI-gebruiker.</p>
+    <button class="btn btn-primary" onclick="startQuiz()">Start de quiz →</button>
   </div>
+
   <div class="intro-content">
-    <div class="intro-card">
-      <h2>Wat ontdek je?</h2>
+    <div class="intro-why">
+      <h2>Waarom dit ertoe doet</h2>
+      <p>AI is niet meer weg te denken uit het ondernemen. Maar de meeste ondernemers gebruiken het <strong>onbewust</strong> — zonder na te denken over wat er met hun data gebeurt, wat de wet van hen vraagt of hoe het past bij hun waarden.</p>
+      <p>De <strong>EU AI Act</strong> is inmiddels van kracht. Klantdata verdwijnt in systemen waar je geen zicht op hebt. En AI-tools die je vandaag gebruikt, kunnen morgen je reputatie of compliance op het spel zetten.</p>
+      <p>Weten waar je staat is de eerste stap. Deze quiz laat je in vijf minuten zien wat jouw vertrekpunt is — zonder oordeel, met concrete handvatten.</p>
+    </div>
+
+    <div class="intro-outcomes">
+      <h3>Wat ontdek je?</h3>
       <div class="outcomes">
         <div class="outcome-item">
           <span class="outcome-icon">🌱</span>
@@ -377,7 +478,7 @@
           <span class="outcome-icon">🔍</span>
           <div>
             <div class="outcome-name">De Bewuste Gebruiker</div>
-            <div class="outcome-desc">Je denkt na over je AI-gebruik maar er zijn nog blinde vlekken.</div>
+            <div class="outcome-desc">Je denkt na over je AI-gebruik maar er zijn nog blinde vlekken. Een audit helpt je die zichtbaar maken.</div>
           </div>
         </div>
         <div class="outcome-item">
@@ -389,12 +490,17 @@
         </div>
       </div>
     </div>
+
+    <div class="intro-start">
+      <button class="btn btn-primary" onclick="startQuiz()">Start de quiz →</button>
+      <p>8 vragen · geen registratie nodig om te beginnen</p>
+    </div>
   </div>
 </div>
 
-<!-- VRAGEN -->
+<!-- ── VRAGEN ── -->
 <div id="screen-question" class="screen">
-  <div class="question-header">
+  <div class="question-topbar">
     <div class="progress-wrap">
       <div class="progress-info">
         <span class="progress-label">Vraag <span id="q-current">1</span> van 8</span>
@@ -408,25 +514,13 @@
   <div class="question-body">
     <div class="question-text" id="question-text"></div>
     <div class="answers" id="answers"></div>
-  </div>
-</div>
-
-<!-- EMAIL -->
-<div id="screen-email" class="screen">
-  <div class="email-screen">
-    <div class="email-card">
-      <div class="email-icon">📬</div>
-      <h2>Je resultaat staat klaar!</h2>
-      <p>Laat je e-mailadres achter en ontdek direct waar jij staat als AI-gebruiker. Je ontvangt ook een persoonlijk rapport met concrete tips.</p>
-      <input type="email" class="email-input" id="email-input" placeholder="jouw@emailadres.nl" />
-      <button class="btn-primary" style="width:100%" onclick="submitEmail()">Bekijk mijn resultaat →</button>
-      <div class="email-error" id="email-error">Vul een geldig e-mailadres in.</div>
-      <p class="privacy-note">🔒 Je gegevens worden nooit gedeeld met derden.</p>
+    <div class="question-nav">
+      <button class="btn btn-outline" id="back-btn" onclick="goBack()">← Terug</button>
     </div>
   </div>
 </div>
 
-<!-- RESULTAAT -->
+<!-- ── RESULTAAT ── -->
 <div id="screen-result" class="screen">
   <div class="result-hero" id="result-hero">
     <span class="result-badge">Jouw resultaat</span>
@@ -434,14 +528,32 @@
     <h2 id="result-title"></h2>
     <p class="result-sub" id="result-sub"></p>
   </div>
+
   <div class="result-content">
-    <div class="result-card">
-      <p id="result-body"></p>
+    <div class="result-preview">
+      <h3>Wat dit betekent</h3>
+      <p id="result-preview-text"></p>
     </div>
-    <div class="cta-card">
-      <h3 id="cta-title"></h3>
-      <p id="cta-body"></p>
-      <a href="#" class="btn-cta" id="cta-btn">Plan een gratis Spill Your Tea sessie →</a>
+
+    <div class="rapport-card">
+      <h3>Ontvang je persoonlijke rapport</h3>
+      <p>Laat je e-mailadres achter en ontvang een uitgebreide analyse met concrete stappen die bij jouw profiel passen.</p>
+
+      <div id="email-form">
+        <input type="email" class="email-input" id="email-input" placeholder="jouw@emailadres.nl" />
+        <div class="email-error" id="email-error">Vul een geldig e-mailadres in.</div>
+        <button class="btn btn-amber" onclick="submitEmail()">Stuur mij het rapport →</button>
+        <p class="privacy-note">🔒 Je gegevens worden nooit gedeeld met derden.</p>
+      </div>
+
+      <div class="rapport-full" id="rapport-full">
+        <p id="rapport-body"></p>
+        <hr class="rapport-divider" />
+        <div class="cta-section">
+          <a href="#" class="btn btn-primary" id="cta-btn" style="justify-content:center;width:100%;">Plan een gratis Spill Your Tea sessie →</a>
+          <p id="cta-sub"></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -449,10 +561,10 @@
 <footer>© Kimberley van Ruiven &nbsp;·&nbsp; Spill Your Tea: AI zonder bullshit</footer>
 
 <script>
-  // ── Vul hier later je MailerLite gegevens in ────────────────
+  // ── MailerLite config ────────────────────────────
   const MAILERLITE_API_KEY  = '';
   const MAILERLITE_GROUP_ID = '';
-  // ────────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────
 
   const QUESTIONS = [
     {
@@ -535,27 +647,27 @@
       emoji: '🌱',
       sub: 'Je gebruikt AI maar hebt er nog nooit bewust over nagedacht.',
       heroClass: 'ontdekker',
-      body: 'Je gebruikt AI maar hebt er nog niet bewust over nagedacht — en dat is eerlijker dan je denkt. De meeste ondernemers staan hier. Het goede nieuws: je hoeft het niet alleen uit te zoeken.\n\nMet de <strong>Ethical AI Audit</strong> breng ik in kaart waar jij staat, wat de risico\'s zijn, en hoe je bewuster kunt gaan werken met de tools die je al gebruikt.',
-      ctaTitle: 'Klaar voor de eerste stap?',
-      ctaBody: 'Plan een gratis Spill Your Tea sessie en we kijken samen waar je staat.',
+      preview: 'Je staat aan het begin van een bewustwordingsproces — en dat is eerlijker dan je denkt. De meeste ondernemers staan hier. De kans is groot dat je AI gebruikt zonder te weten wat er met je data gebeurt, wat de wet van je vraagt of hoe het aansluit bij jouw waarden.',
+      rapport: 'Het goede nieuws: je hoeft het niet alleen uit te zoeken. Met de <strong>Ethical AI Audit</strong> breng ik in kaart waar jij staat, wat de risico\'s zijn, en hoe je bewuster kunt gaan werken met de tools die je al gebruikt. In negentig minuten heb je helderheid.',
+      ctaSub: 'Ontvang een uitnodiging voor de Clarity Tea — een gratis kennismaking waarbij we samen kijken wat jij nodig hebt.',
     },
     bewuste: {
       title: 'De Bewuste Gebruiker',
       emoji: '🔍',
       sub: 'Je denkt na over je AI-gebruik, maar er zijn nog blinde vlekken.',
       heroClass: 'bewuste',
-      body: 'Je bent op de goede weg. Je denkt na over je AI-gebruik en voelt dat er meer mogelijk is — maar er zijn nog blinde vlekken. Misschien weet je niet precies wat de wet van je vraagt, of heb je nog geen helder beleid op papier staan.\n\nDe <strong>Ethical AI Audit</strong> geeft je in negentig minuten inzicht in waar je staat en drie concrete stappen om verder te gaan.',
-      ctaTitle: 'Ontdek jouw blinde vlekken',
-      ctaBody: 'Plan een gratis Spill Your Tea sessie en ontdek wat jij nodig hebt.',
+      preview: 'Je bent op de goede weg. Je denkt na over je AI-gebruik en voelt dat er meer mogelijk is — maar er zijn nog blinde vlekken. Misschien weet je niet precies wat de wet van je vraagt, of heb je nog geen helder beleid op papier staan.',
+      rapport: 'De <strong>Ethical AI Audit</strong> geeft je in negentig minuten inzicht in waar je staat en drie concrete stappen om verder te gaan. Je loopt waarschijnlijk al voor op veel collega-ondernemers — dit helpt je dat voordeel te benutten.',
+      ctaSub: 'Ontvang een uitnodiging voor de Ethical AI Audit — de logische volgende stap voor jou.',
     },
     voorloper: {
       title: 'De Ethische Voorloper',
       emoji: '🌟',
       sub: 'Je gebruikt AI bewust en verantwoord. Dat is zeldzaam en waardevol.',
       heroClass: 'voorloper',
-      body: 'Jij gebruikt AI bewust en verantwoord. Je hebt nagedacht over data, privacy, ethiek en jouw waarden als ondernemer. Dat is zeldzaam en waardevol.\n\nMaar bewust blijven kost aandacht, want AI en wetgeving veranderen snel. De <strong>Strippenkaart Bewuste AI</strong> helpt je bijblijven zonder dat je er zelf constant in hoeft te duiken.',
-      ctaTitle: 'Klaar voor de volgende stap?',
-      ctaBody: 'Plan een gratis Spill Your Tea sessie en ontdek wat de volgende stap voor jou is.',
+      preview: 'Jij gebruikt AI bewust en verantwoord. Je hebt nagedacht over data, privacy, ethiek en jouw waarden als ondernemer. Dat is zeldzaam en waardevol — en het maakt jou tot een geloofwaardige stem in jouw vakgebied.',
+      rapport: 'Maar bewust blijven kost aandacht, want AI en wetgeving veranderen snel. De <strong>Strippenkaart Bewuste AI</strong> helpt je bijblijven zonder dat je er zelf constant in hoeft te duiken. Zo behoud je je voorsprong — structureel.',
+      ctaSub: 'Ontvang een uitnodiging voor het volledige pakket of de strippenkaart — voor ondernemers die al weten waar ze staan.',
     },
   };
 
@@ -582,6 +694,7 @@
     document.getElementById('q-pct').textContent = pct + '%';
     document.getElementById('progress-fill').style.width = pct + '%';
     document.getElementById('question-text').textContent = q.text;
+    document.getElementById('back-btn').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
     document.getElementById('answers').innerHTML = q.answers.map(a => `
       <button class="answer-btn" onclick="selectAnswer(${a.score}, this)">
         <span class="answer-letter">${a.letter}</span>
@@ -594,14 +707,24 @@
     document.querySelectorAll('.answer-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
     setTimeout(() => {
-      scores.push(score);
+      scores[currentQ] = score;
       currentQ++;
       if (currentQ < QUESTIONS.length) {
         renderQuestion();
       } else {
-        showScreen('screen-email');
+        showResult();
       }
     }, 350);
+  }
+
+  function goBack() {
+    if (currentQ === 0) {
+      showScreen('screen-intro');
+      return;
+    }
+    currentQ--;
+    scores.pop();
+    renderQuestion();
   }
 
   function getResultKey() {
@@ -609,6 +732,21 @@
     if (total >= 25) return 'voorloper';
     if (total >= 15) return 'bewuste';
     return 'ontdekker';
+  }
+
+  function showResult() {
+    const key = getResultKey();
+    const r = RESULTS[key];
+    document.getElementById('result-hero').className = 'result-hero ' + r.heroClass;
+    document.getElementById('result-emoji').textContent = r.emoji;
+    document.getElementById('result-title').textContent = r.title;
+    document.getElementById('result-sub').textContent = r.sub;
+    document.getElementById('result-preview-text').innerHTML = r.preview;
+    document.getElementById('rapport-body').innerHTML = r.rapport;
+    document.getElementById('cta-sub').textContent = r.ctaSub;
+    document.getElementById('email-form').style.display = 'block';
+    document.getElementById('rapport-full').classList.remove('visible');
+    showScreen('screen-result');
   }
 
   async function submitEmail() {
@@ -639,19 +777,9 @@
       } catch (e) {}
     }
 
-    showResult(key);
-  }
-
-  function showResult(key) {
-    const r = RESULTS[key];
-    document.getElementById('result-hero').className = 'result-hero ' + r.heroClass;
-    document.getElementById('result-emoji').textContent = r.emoji;
-    document.getElementById('result-title').textContent = r.title;
-    document.getElementById('result-sub').textContent = r.sub;
-    document.getElementById('result-body').innerHTML = r.body.replace(/\n/g, '<br><br>');
-    document.getElementById('cta-title').textContent = r.ctaTitle;
-    document.getElementById('cta-body').textContent = r.ctaBody;
-    showScreen('screen-result');
+    document.getElementById('email-form').style.display = 'none';
+    document.getElementById('rapport-full').classList.add('visible');
+    window.scrollTo({ top: document.getElementById('rapport-full').offsetTop - 80, behavior: 'smooth' });
   }
 </script>
 </body>
