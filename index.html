@@ -12,15 +12,15 @@
       --accent2: #b45309;
       --orange:  #78350f;
       --dark:    #78350f;
-      --bg:      #f6f7fb;
-      --card:    #ffffff;
-      --text:    #0f1117;
-      --muted:   #6b7280;
-      --subtle:  #e5e7eb;
-      --border:  rgba(0,0,0,0.07);
+      --bg:      rgba(30,15,5,0.55);
+      --card:    rgba(20,10,3,0.82);
+      --text:    #ffffff;
+      --muted:   rgba(255,255,255,0.72);
+      --subtle:  rgba(255,255,255,0.14);
+      --border:  rgba(255,255,255,0.12);
       --radius:  16px;
-      --shadow:  0 2px 12px rgba(0,0,0,0.07);
-      --shadow-lg: 0 8px 32px rgba(120,53,15,0.18);
+      --shadow:  0 2px 12px rgba(0,0,0,0.25);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.35);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,8 +29,8 @@
     body {
       font-family: 'Inter', -apple-system, sans-serif;
       background:
-        linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.08)),
+        url('https://images.unsplash.com/vector-1739984382388-03d3e9f44aa1?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -117,7 +117,7 @@
     .intro-hero {
       background:
         linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739984382388-03d3e9f44aa1?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       padding: 4rem 1.5rem 5.5rem;
       text-align: center;
       color: white;
@@ -173,7 +173,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 1.1rem;
       font-weight: 800;
-      color: #0f1117;
+      color: #ffffff;
       margin-bottom: 0.75rem;
     }
     .intro-why p {
@@ -220,7 +220,7 @@
     .outcome-icon { font-size: 1.8rem; color: var(--dark); }
     .outcome-icon i { font-size: 1.8rem; }
     @media (max-width: 500px) { .outcomes { grid-template-columns: 1fr; } }
-    .outcome-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0f1117; margin-bottom: 0.15rem; }
+    .outcome-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; color: #ffffff; margin-bottom: 0.15rem; }
     .outcome-desc { font-size: 0.79rem; color: var(--muted); line-height: 1.5; }
 
     .intro-start {
@@ -235,7 +235,7 @@
 
     /* ── VRAGEN ── */
     .question-topbar {
-      background: rgba(255,255,255,0.92);
+      background: rgba(20,10,3,0.85);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       padding: 0.85rem 1.5rem;
@@ -330,17 +330,17 @@
     .result-hero.ontdekker {
       background:
         linear-gradient(rgba(146,64,14,0.88), rgba(180,83,9,0.88)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739984382388-03d3e9f44aa1?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.bewuste {
       background:
         linear-gradient(rgba(180,83,9,0.88), rgba(217,119,6,0.88)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739984382388-03d3e9f44aa1?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.voorloper {
       background:
         linear-gradient(rgba(120,53,15,0.88), rgba(146,64,14,0.88)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739984382388-03d3e9f44aa1?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
 
     .result-badge {
@@ -410,7 +410,7 @@
     .rapport-card h3 {
       font-size: 1.1rem;
       font-weight: 800;
-      color: var(--dark);
+      color: #ffffff;
       margin-bottom: 0.5rem;
     }
     .rapport-card > p {
@@ -426,13 +426,14 @@
       border-radius: 10px;
       font-family: inherit;
       font-size: 0.95rem;
-      color: var(--text);
+      color: #ffffff;
       outline: none;
       transition: border-color 0.2s;
       margin-bottom: 0.75rem;
-      background: var(--bg);
+      background: rgba(255,255,255,0.10);
     }
-    .email-input:focus { border-color: var(--accent); background: white; }
+    .email-input::placeholder { color: rgba(255,255,255,0.45); }
+    .email-input:focus { border-color: var(--accent); background: rgba(255,255,255,0.15); }
     .email-error { color: #ef4444; font-size: 0.8rem; margin-bottom: 0.5rem; display: none; }
     .privacy-note { font-size: 0.71rem; color: var(--muted); margin-top: 0.6rem; text-align: center; }
 
@@ -529,8 +530,8 @@
       padding: 0.55rem 1.1rem;
       border-radius: 99px;
       border: 1.5px solid var(--subtle);
-      background: white;
-      color: var(--text);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
       cursor: pointer;
       transition: all 0.18s;
       text-decoration: none;
@@ -960,7 +961,7 @@
   function getResultKey() {
     const total = scores.reduce((s, v) => s + v, 0);
     if (total >= 25) return 'voorloper';
-    if (total >= 15) return 'bewuste';
+    if (total >= 16) return 'bewuste';
     return 'ontdekker';
   }
 
