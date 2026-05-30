@@ -30,7 +30,7 @@
       font-family: 'Inter', -apple-system, sans-serif;
       background:
         linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1742311318884-3628cb9eb948?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -39,15 +39,16 @@
 
     /* ── Header ── */
     .site-header {
-      background: rgba(120,53,15,0.92);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(8px);
       padding: 0.9rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-    .logo { color: white; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; }
-    .logo span { color: #ef4444; }
+    .logo { color: #0f1117; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; }
+    .logo span { color: #0f1117; }
 
     /* ── Screens ── */
     .screen { display: none; flex: 1; flex-direction: column; }
@@ -117,7 +118,7 @@
     .intro-hero {
       background:
         linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1742311318884-3628cb9eb948?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       padding: 4rem 1.5rem 5.5rem;
       text-align: center;
       color: white;
@@ -143,7 +144,7 @@
       color: #ffffff;
       text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);
     }
-    .intro-hero h1 em { color: #ef4444; font-style: normal; }
+    .intro-hero h1 em { color: #d97706; font-style: normal; }
     .intro-hero .hero-sub {
       font-family: 'Inter', sans-serif;
       font-size: 1.25rem;
@@ -329,18 +330,18 @@
     }
     .result-hero.ontdekker {
       background:
-        linear-gradient(rgba(146,64,14,0.88), rgba(180,83,9,0.88)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        linear-gradient(rgba(60,25,5,0.92), rgba(92,38,8,0.92)),
+        url('https://images.unsplash.com/vector-1742311318884-3628cb9eb948?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.bewuste {
       background:
-        linear-gradient(rgba(180,83,9,0.88), rgba(217,119,6,0.88)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        linear-gradient(rgba(60,25,5,0.92), rgba(120,53,15,0.92)),
+        url('https://images.unsplash.com/vector-1742311318884-3628cb9eb948?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.voorloper {
       background:
-        linear-gradient(rgba(120,53,15,0.88), rgba(146,64,14,0.88)),
-        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        linear-gradient(rgba(40,20,5,0.92), rgba(78,35,8,0.92)),
+        url('https://images.unsplash.com/vector-1742311318884-3628cb9eb948?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
 
     .result-badge {
@@ -392,7 +393,7 @@
     .result-preview h3 {
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--muted);
+      color: #0f1117;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 0.75rem;
@@ -539,11 +540,15 @@
     .share-btn i { font-size: 1rem; }
 
     /* ── Glassmorphism kaarten ── */
-    .intro-why, .intro-outcomes, .result-preview, .rapport-card {
+    .intro-why, .intro-outcomes, .rapport-card {
       background: rgba(255,255,255,0.82);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255,255,255,0.6);
+    }
+    .result-preview {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
     }
 
     /* ── Foto placeholder ── */
