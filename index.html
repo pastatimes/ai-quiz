@@ -9,7 +9,7 @@
     :root {
       --accent:  #d97706;
       --accent2: #b45309;
-      --orange:  #ea580c;
+      --orange:  #78350f;
       --dark:    #78350f;
       --bg:      #f6f7fb;
       --card:    #ffffff;
@@ -70,9 +70,9 @@
       color: white;
       font-size: 1rem;
       padding: 0.9rem 2.2rem;
-      box-shadow: 0 4px 16px rgba(234,88,12,0.38);
+      box-shadow: 0 4px 16px rgba(120,53,15,0.38);
     }
-    .btn-primary:hover { background: #c2410c; transform: translateY(-1px); }
+    .btn-primary:hover { background: #5c2709; transform: translateY(-1px); }
     .btn-secondary {
       background: rgba(255,255,255,0.15);
       color: white;
@@ -445,7 +445,10 @@
     }
     #intro-photo { margin: 1.25rem auto 0; }
     #result-photo { margin: 1rem auto; }
-    .photo-placeholder .photo-icon { font-size: 2rem; }
+    .photo-placeholder .photo-icon {
+      font-size: 2.5rem;
+      filter: grayscale(1) opacity(0.25);
+    }
 
     /* ── Standalone CTA ── */
     .cta-card-standalone {
@@ -527,7 +530,7 @@
     </div>
 
     <div class="photo-placeholder" id="intro-photo">
-      <span class="photo-icon">📷</span>
+      <span class="photo-icon">☕</span>
       <span>Voeg hier je foto in</span>
     </div>
 
@@ -619,7 +622,7 @@
     </div>
 
     <div class="photo-placeholder" id="result-photo">
-      <span class="photo-icon">📷</span>
+      <span class="photo-icon">☕</span>
       <span>Voeg hier je foto in</span>
     </div>
 
