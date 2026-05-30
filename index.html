@@ -29,8 +29,8 @@
     body {
       font-family: 'Inter', -apple-system, sans-serif;
       background:
-        linear-gradient(rgba(255,255,255,0.68), rgba(255,255,255,0.68)),
-        url('https://images.unsplash.com/photo-1755016123077-705d78a513e8?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)),
+        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -47,7 +47,7 @@
       z-index: 10;
     }
     .logo { color: white; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; }
-    .logo span { color: #fca5a5; }
+    .logo span { color: #ef4444; }
 
     /* ── Screens ── */
     .screen { display: none; flex: 1; flex-direction: column; }
@@ -117,7 +117,7 @@
     .intro-hero {
       background:
         linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
-        url('https://images.unsplash.com/photo-1755016123077-705d78a513e8?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       padding: 4rem 1.5rem 5.5rem;
       text-align: center;
       color: white;
@@ -125,7 +125,7 @@
     .intro-badge {
       display: inline-block;
       background: rgba(217,119,6,0.3);
-      color: #fca5a5;
+      color: #ef4444;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.14em;
@@ -143,7 +143,7 @@
       color: #ffffff;
       text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);
     }
-    .intro-hero h1 em { color: #fca5a5; font-style: normal; }
+    .intro-hero h1 em { color: #ef4444; font-style: normal; }
     .intro-hero .hero-sub {
       font-family: 'Inter', sans-serif;
       font-size: 1.25rem;
@@ -199,18 +199,27 @@
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
-    .outcomes { display: flex; flex-direction: column; gap: 0.75rem; }
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
     .outcome-item {
       display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
-      padding: 0.85rem;
-      border-radius: 10px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.6rem;
+      padding: 1.25rem 0.75rem;
+      border-radius: var(--radius);
       background: var(--bg);
       border: 1px solid var(--border);
+      transition: transform 0.18s, box-shadow 0.18s;
     }
-    .outcome-icon { font-size: 1.5rem; flex-shrink: 0; color: var(--dark); }
-    .outcome-icon i { font-size: 1.5rem; }
+    .outcome-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .outcome-icon { font-size: 1.8rem; color: var(--dark); }
+    .outcome-icon i { font-size: 1.8rem; }
+    @media (max-width: 500px) { .outcomes { grid-template-columns: 1fr; } }
     .outcome-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0f1117; margin-bottom: 0.15rem; }
     .outcome-desc { font-size: 0.79rem; color: var(--muted); line-height: 1.5; }
 
@@ -321,17 +330,17 @@
     .result-hero.ontdekker {
       background:
         linear-gradient(rgba(146,64,14,0.88), rgba(180,83,9,0.88)),
-        url('https://images.unsplash.com/photo-1755016123077-705d78a513e8?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.bewuste {
       background:
         linear-gradient(rgba(180,83,9,0.88), rgba(217,119,6,0.88)),
-        url('https://images.unsplash.com/photo-1755016123077-705d78a513e8?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.voorloper {
       background:
         linear-gradient(rgba(120,53,15,0.88), rgba(146,64,14,0.88)),
-        url('https://images.unsplash.com/photo-1755016123077-705d78a513e8?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/photo-1596098823457-74e360fcd023?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
 
     .result-badge {
@@ -449,6 +458,94 @@
       line-height: 1.5;
     }
 
+    /* ── Animaties ── */
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(36px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes revealResult {
+      from { opacity: 0; transform: scale(0.97) translateY(-8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes progressGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(120,53,15,0.3); }
+      50%       { box-shadow: 0 0 10px 3px rgba(120,53,15,0.15); }
+    }
+    .question-body { animation: slideInRight 0.35s ease-out; }
+    .answer-btn { opacity: 0; animation: fadeInUp 0.3s ease-out forwards; }
+    .answer-btn:nth-child(1) { animation-delay: 0.05s; }
+    .answer-btn:nth-child(2) { animation-delay: 0.12s; }
+    .answer-btn:nth-child(3) { animation-delay: 0.19s; }
+    .answer-btn:nth-child(4) { animation-delay: 0.26s; }
+    .progress-bar-fill { animation: progressGlow 2s ease-in-out infinite; }
+    #screen-result .result-hero { animation: revealResult 0.6s ease-out; }
+    #screen-result .result-content { animation: fadeInUp 0.6s ease-out 0.2s both; }
+
+    /* ── Feedback toast ── */
+    .feedback-toast {
+      position: fixed;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(120,53,15,0.92);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 0.7rem 1.6rem;
+      border-radius: 99px;
+      opacity: 0;
+      transition: opacity 0.18s;
+      pointer-events: none;
+      z-index: 100;
+      letter-spacing: 0.02em;
+    }
+    .feedback-toast.show { opacity: 1; }
+
+    /* ── Social share ── */
+    .share-section {
+      text-align: center;
+      padding: 1.25rem 0 0.5rem;
+    }
+    .share-section p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .share-buttons { display: flex; gap: 0.65rem; justify-content: center; flex-wrap: wrap; }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1.1rem;
+      border-radius: 99px;
+      border: 1.5px solid var(--subtle);
+      background: white;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.18s;
+      text-decoration: none;
+    }
+    .share-btn:hover { border-color: var(--dark); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .share-btn i { font-size: 1rem; }
+
+    /* ── Glassmorphism kaarten ── */
+    .intro-why, .intro-outcomes, .result-preview, .rapport-card {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
     /* ── Foto placeholder ── */
     .photo-placeholder {
       width: 100%;
@@ -535,6 +632,7 @@
 </head>
 <body>
 
+<div class="feedback-toast" id="feedback-toast"></div>
 <header class="site-header">
   <div class="logo">Spill Your Tea: <span>AI zonder bullshit</span></div>
 </header>
@@ -661,6 +759,22 @@
         <a href="#" class="btn btn-primary" id="cta-btn-standalone">Plan een gratis Spill Your Tea sessie →</a>
       </div>
     </div>
+
+    <div class="share-section">
+      <p>Deel je resultaat</p>
+      <div class="share-buttons">
+        <a class="share-btn" id="share-whatsapp" target="_blank" rel="noopener">
+          <i class="ph ph-whatsapp-logo"></i> WhatsApp
+        </a>
+        <a class="share-btn" id="share-linkedin" target="_blank" rel="noopener">
+          <i class="ph ph-linkedin-logo"></i> LinkedIn
+        </a>
+        <button class="share-btn" onclick="copyLink()">
+          <i class="ph ph-link"></i> <span id="copy-label">Kopieer link</span>
+        </button>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -751,27 +865,27 @@
     ontdekker: {
       title: 'De Ontdekker',
       emoji: '<i class="ph ph-plant"></i>',
-      sub: 'Je gebruikt AI maar hebt er nog nooit bewust over nagedacht.',
+      sub: 'Je gebruikt AI. Maar AI gebruikt ook jou.',
       heroClass: 'ontdekker',
-      preview: 'Je staat aan het begin van een bewustwordingsproces. En dat is eerlijker dan je denkt. De meeste ondernemers staan hier. De kans is groot dat je AI gebruikt zonder te weten wat er met je data gebeurt, wat de wet van je vraagt of hoe het aansluit bij jouw waarden.',
+      preview: 'Eerlijk gezegd? De meeste ondernemers staan precies waar jij nu staat. Dat maakt het niet minder urgent. Je gebruikt tools waarvan je niet weet wat ze met je data doen, welke risico\'s je loopt of wat de wet van je vraagt. Niet omdat je het niet wilt weten, maar omdat niemand het je heeft verteld.',
       rapport: 'Het goede nieuws: je hoeft het niet alleen uit te zoeken. Met de <strong>Ethical AI Audit</strong> breng ik in kaart waar jij staat, wat de risico\'s zijn, en hoe je bewuster kunt gaan werken met de tools die je al gebruikt. In negentig minuten heb je helderheid.',
       ctaSub: 'Ontvang een uitnodiging voor de Clarity Tea: een gratis kennismaking waarbij we samen kijken wat jij nodig hebt.',
     },
     bewuste: {
       title: 'De Bewuste Gebruiker',
       emoji: '<i class="ph ph-magnifying-glass"></i>',
-      sub: 'Je denkt na over je AI-gebruik, maar er zijn nog blinde vlekken.',
+      sub: 'Je ziet het. Maar zien is niet hetzelfde als handelen.',
       heroClass: 'bewuste',
-      preview: 'Je bent op de goede weg. Je denkt na over je AI-gebruik en voelt dat er meer mogelijk is. Maar er zijn nog blinde vlekken. Misschien weet je niet precies wat de wet van je vraagt, of heb je nog geen helder beleid op papier staan.',
+      preview: 'Je bent verder dan de meeste ondernemers. Je stelt vragen, je voelt de spanning, je weet dat er iets moet veranderen. Maar ergens zit er nog een blinde vlek. Een plek waar je het laat liggen, niet omdat je niet wilt, maar omdat je niet precies weet hoe.',
       rapport: 'De <strong>Ethical AI Audit</strong> geeft je in negentig minuten inzicht in waar je staat en drie concrete stappen om verder te gaan. Je loopt waarschijnlijk al voor op veel collega-ondernemers. Dit helpt je dat voordeel te benutten.',
       ctaSub: 'Ontvang een uitnodiging voor de Ethical AI Audit: de logische volgende stap voor jou.',
     },
     voorloper: {
       title: 'De Ethische Voorloper',
       emoji: '<i class="ph ph-star"></i>',
-      sub: 'Je gebruikt AI bewust en verantwoord. Dat is zeldzaam en waardevol.',
+      sub: 'Jij bent de uitzondering. Niet de regel.',
       heroClass: 'voorloper',
-      preview: 'Jij gebruikt AI bewust en verantwoord. Je hebt nagedacht over data, privacy, ethiek en jouw waarden als ondernemer. Dat is zeldzaam en waardevol. Het maakt jou tot een geloofwaardige stem in jouw vakgebied.',
+      preview: 'Je hebt nagedacht over data, privacy, ethiek en jouw waarden als ondernemer. Dat is zeldzamer dan je denkt. En het maakt jou geloofwaardig, consistent en onderscheidend. Anderen praten over bewust ondernemen. Jij doet het al.',
       rapport: 'Maar bewust blijven kost aandacht, want AI en wetgeving veranderen snel. De <strong>Strippenkaart Bewuste AI</strong> helpt je bijblijven zonder dat je er zelf constant in hoeft te duiken. Zo behoud je je voorsprong op een structurele manier.',
       ctaSub: 'Ontvang een uitnodiging voor het volledige pakket of de strippenkaart: voor ondernemers die al weten waar ze staan.',
     },
@@ -809,9 +923,19 @@
     `).join('');
   }
 
+  const FEEDBACK = ['Duidelijk.', 'Interessant.', 'Goed om te weten.', 'Noteer ik.', 'Eerlijk.', 'Aha.', 'Dat herken ik.'];
+
+  function showFeedback() {
+    const toast = document.getElementById('feedback-toast');
+    toast.textContent = FEEDBACK[Math.floor(Math.random() * FEEDBACK.length)];
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 600);
+  }
+
   function selectAnswer(score, btn) {
     document.querySelectorAll('.answer-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
+    showFeedback();
     setTimeout(() => {
       scores[currentQ] = score;
       currentQ++;
@@ -820,7 +944,7 @@
       } else {
         showResult();
       }
-    }, 350);
+    }, 500);
   }
 
   function goBack() {
@@ -854,7 +978,21 @@
     document.getElementById('cta-title-standalone').textContent = r.title + ': de volgende stap';
     document.getElementById('cta-sub-standalone').textContent = r.ctaSub;
     document.getElementById('cta-standalone').classList.add('visible');
+
+    const url = window.location.href;
+    const shareText = `Ik ben "${r.title}" als AI-gebruiker. Wat ben jij? Doe de quiz: ${url}`;
+    document.getElementById('share-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+    document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+
     showScreen('screen-result');
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const label = document.getElementById('copy-label');
+      label.textContent = 'Gekopieerd!';
+      setTimeout(() => { label.textContent = 'Kopieer link'; }, 2000);
+    });
   }
 
   async function submitEmail() {
