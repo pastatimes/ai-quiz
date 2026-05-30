@@ -555,23 +555,6 @@
       border: 1px solid rgba(0,0,0,0.07);
     }
 
-    /* ── Intro foto ── */
-    .intro-photo-wrap {
-      max-width: 620px;
-      margin: 1.25rem auto 0;
-      width: 100%;
-      padding: 0 1rem;
-    }
-    .intro-photo {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: var(--radius);
-      display: block;
-      box-shadow: var(--shadow-lg);
-    }
-
     /* ── Foto placeholder ── */
     .photo-placeholder {
       width: 100%;
@@ -680,8 +663,9 @@
       <p>Weten waar je staat is de eerste stap. Deze quiz laat je in vijf minuten zien wat jouw vertrekpunt is. Zonder oordeel, met concrete handvatten.</p>
     </div>
 
-    <div class="intro-photo-wrap">
-      <img src="kimberley.jpg" alt="Kimberley van Ruiven" class="intro-photo" />
+    <div class="photo-placeholder" id="intro-photo">
+      <span class="photo-icon"><i class="ph ph-coffee"></i></span>
+      <span>Voeg hier je foto in</span>
     </div>
 
     <div class="intro-outcomes">
