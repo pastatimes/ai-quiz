@@ -2,6 +2,7 @@
   "name": "Gebruik jij AI, of gebruikt AI jou?",
   "short_name": "AI Quiz",
   "description": "Ontdek in vijf minuten waar jij staat als bewuste AI-gebruiker.",
+  "id": "/ai-quiz/",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f2efe9",
