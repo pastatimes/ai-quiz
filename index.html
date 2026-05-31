@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gebruik jij AI, of gebruikt AI jou? – Spill Your Tea</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f1117" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AI Quiz" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
   <style>
@@ -30,7 +35,7 @@
       font-family: 'Space Grotesk', sans-serif;
       background:
         linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)),
-        url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739945219176-3e81b5cd39dd?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -130,7 +135,7 @@
     .intro-hero {
       background:
         linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
-        url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739945219176-3e81b5cd39dd?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
       padding: 4rem 1.5rem 5.5rem;
       text-align: center;
       color: white;
@@ -344,17 +349,17 @@
     .result-hero.ontdekker {
       background:
         linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.88)),
-        url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739945219176-3e81b5cd39dd?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.bewuste {
       background:
         linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-        url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739945219176-3e81b5cd39dd?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
     .result-hero.voorloper {
       background:
         linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.90)),
-        url('https://images.unsplash.com/vector-1775218725057-0db0a905562f?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+        url('https://images.unsplash.com/vector-1739945219176-3e81b5cd39dd?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover fixed;
     }
 
     .result-badge {
@@ -669,9 +674,10 @@
   <div class="intro-content">
     <div class="intro-why">
       <h2>Waarom dit ertoe doet</h2>
+      <p>Niet alle AI is hetzelfde. Net zoals je bewust kiest voor biologisch vlees of liever geen fastfood wilt, kun je ook kiezen voor AI-tools die passen bij jouw waarden. Er is een groot verschil tussen tools die transparant zijn over hoe ze met jouw data omgaan, en tools die dat niet zijn. Wie nadenkt over wat er op zijn bord ligt, maar klakkeloos klantgegevens invoert in een AI-tool zonder te weten waar die naartoe gaan, mist een stap. Door te onderscheiden welke AI ethisch is en welke niet, kun je tools kiezen, inzetten en toepassen op een manier die consistent is met wie jij bent als ondernemer.</p>
       <p>AI is niet meer weg te denken uit het ondernemen. Maar de meeste ondernemers gebruiken het <strong>onbewust</strong>. Zonder na te denken over wat er met hun data gebeurt, wat de wet van hen vraagt of hoe het past bij hun waarden.</p>
-      <p>De <strong>EU AI Act</strong> is inmiddels van kracht. Klantdata verdwijnt in systemen waar je geen zicht op hebt. En AI-tools die je vandaag gebruikt, kunnen morgen je reputatie of compliance op het spel zetten.</p>
-      <p>Weten waar je staat is de eerste stap. Deze quiz laat je in vijf minuten zien wat jouw vertrekpunt is. Zonder oordeel, met concrete handvatten.</p>
+      <p>De <a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener" style="color:inherit;font-weight:700;">EU AI Act</a> is inmiddels van kracht en de gevolgen zijn concreet. Gebruik je AI zonder te weten hoe je data wordt verwerkt, dan loop je risico op boetes, reputatieschade of het verlies van klantvertrouwen. Ethisch omgaan met AI betekent niet dat je het niet meer mag gebruiken. Het betekent dat je weet wát je gebruikt, waarom, en wat de impact daarvan is op je klanten, je bedrijf en de samenleving.</p>
+      <p>Weten waar je staat is de eerste stap. Deze quiz laat je in vijf minuten zien wat jouw vertrekpunt is. Met concrete tips over wat je nu al kunt doen om ethischer met AI om te gaan.</p>
     </div>
 
 
@@ -748,7 +754,7 @@
 
     <div class="rapport-card">
       <h3>Ontvang je persoonlijke rapport</h3>
-      <p>Laat je e-mailadres achter en ontvang een uitgebreide analyse met concrete stappen die bij jouw profiel passen.</p>
+      <p>Laat je e-mailadres achter en ontvang een uitgebreide analyse met concrete stappen die bij jouw profiel passen, zodat je ethischer met AI om kunt gaan.</p>
 
       <div id="email-form">
         <input type="email" class="email-input" id="email-input" placeholder="jouw@emailadres.nl" />
@@ -880,7 +886,7 @@
       sub: 'Je gebruikt AI. Maar AI gebruikt ook jou.',
       heroClass: 'ontdekker',
       preview: 'Eerlijk gezegd? De meeste ondernemers staan precies waar jij nu staat. Dat maakt het niet minder urgent. Je gebruikt tools waarvan je niet weet wat ze met je data doen, welke risico\'s je loopt of wat de wet van je vraagt. Niet omdat je het niet wilt weten, maar omdat niemand het je heeft verteld.',
-      rapport: 'Het goede nieuws: je hoeft het niet alleen uit te zoeken. Met de <strong>Ethical AI Audit</strong> breng ik in kaart waar jij staat, wat de risico\'s zijn, en hoe je bewuster kunt gaan werken met de tools die je al gebruikt. In negentig minuten heb je helderheid.',
+      rapport: 'Het goede nieuws: je hoeft het niet alleen uit te zoeken. Met de <strong>Ethical AI Audit</strong> breng ik in kaart waar jij staat, wat de risico\'s zijn, en hoe je concreet aan de slag kunt om ethischer met AI om te gaan. In negentig minuten heb je helderheid.',
       ctaSub: 'Ontvang een uitnodiging voor de Clarity Tea: een gratis kennismaking waarbij we samen kijken wat jij nodig hebt.',
     },
     bewuste: {
@@ -889,7 +895,7 @@
       sub: 'Je ziet het. Maar zien is niet hetzelfde als handelen.',
       heroClass: 'bewuste',
       preview: 'Je bent verder dan de meeste ondernemers. Je stelt vragen, je voelt de spanning, je weet dat er iets moet veranderen. Maar ergens zit er nog een blinde vlek. Een plek waar je het laat liggen, niet omdat je niet wilt, maar omdat je niet precies weet hoe.',
-      rapport: 'De <strong>Ethical AI Audit</strong> geeft je in negentig minuten inzicht in waar je staat en drie concrete stappen om verder te gaan. Je loopt waarschijnlijk al voor op veel collega-ondernemers. Dit helpt je dat voordeel te benutten.',
+      rapport: 'De <strong>Ethical AI Audit</strong> geeft je in negentig minuten inzicht in waar je staat en drie concrete stappen om ethischer met AI om te gaan. Je loopt waarschijnlijk al voor op veel collega-ondernemers. Dit helpt je dat voordeel te benutten.',
       ctaSub: 'Ontvang een uitnodiging voor de Ethical AI Audit: de logische volgende stap voor jou.',
     },
     voorloper: {
@@ -898,7 +904,7 @@
       sub: 'Jij bent de uitzondering. Niet de regel.',
       heroClass: 'voorloper',
       preview: 'Je hebt nagedacht over data, privacy, ethiek en jouw waarden als ondernemer. Dat is zeldzamer dan je denkt. En het maakt jou geloofwaardig, consistent en onderscheidend. Anderen praten over bewust ondernemen. Jij doet het al.',
-      rapport: 'Maar bewust blijven kost aandacht, want AI en wetgeving veranderen snel. De <strong>Strippenkaart Bewuste AI</strong> helpt je bijblijven zonder dat je er zelf constant in hoeft te duiken. Zo behoud je je voorsprong op een structurele manier.',
+      rapport: 'Maar bewust blijven kost aandacht, want AI en wetgeving veranderen snel. De <strong>Strippenkaart Bewuste AI</strong> helpt je bijblijven en ethisch met AI te blijven omgaan, zonder dat je er zelf constant in hoeft te duiken. Zo behoud je je voorsprong op een structurele manier.',
       ctaSub: 'Ontvang een uitnodiging voor het volledige pakket of de strippenkaart: voor ondernemers die al weten waar ze staan.',
     },
   };
@@ -1052,6 +1058,11 @@
     document.getElementById('email-form').style.display = 'none';
     document.getElementById('rapport-full').classList.add('visible');
     window.scrollTo({ top: document.getElementById('rapport-full').offsetTop - 80, behavior: 'smooth' });
+  }
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
   }
 </script>
 </body>
