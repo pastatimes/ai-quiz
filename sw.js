@@ -1,4 +1,4 @@
-const CACHE = 'ai-quiz-v2';
+const CACHE = 'ai-quiz-v3';
 const PRECACHE = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', e => {

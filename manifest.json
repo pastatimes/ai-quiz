@@ -1,12 +1,12 @@
 {
   "name": "Gebruik jij AI, of gebruikt AI jou?",
   "short_name": "AI Quiz",
-  "description": "Ontdek in vijf minuten waar jij staat als bewuste AI-gebruiker.",
+  "description": "Ontdek in vijf minuten waar jij en je organisatie staan in bewust AI-gebruik.",
   "id": "/ai-quiz/",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f2efe9",
-  "theme_color": "#0f1117",
+  "background_color": "#FCFCFC",
+  "theme_color": "#FCFCFC",
   "lang": "nl",
   "icons": [
     {
